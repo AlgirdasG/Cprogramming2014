@@ -62,13 +62,6 @@ FILE * write_result_does_not_exist()
 
 
 
-
-
-
-
-
-
-
     /*
      while((ch = fgetc(fp) ) != EOF)
      {
