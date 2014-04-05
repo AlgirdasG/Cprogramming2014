@@ -13,26 +13,24 @@ struct count_elem {
     
     int words;
     int rows;
-    int chars;
+    unsigned long chars;
+    
 };
 
-FILE * open_data_file(); // open data file for read;
+// Open data file for read;
+FILE * open_data_file();
 
-struct count_elem count(); // Counting how many words, lines, symbols are in text document;
+//// Return result;
+//struct count_elem result();
+struct count_elem skaiciavimas(FILE * dfp);
 
-FILE * write_result_in_file(struct count_elem c); // Append result to result file;
+// Counting how many words, rows, symbols are in text document;
+struct count_elem counting(char buffer[]);
 
+// Append result to result file;
+void append_result_file_exist(struct count_elem c);
 
+// Write result to file. File does not exist;
+void write_result_file_does_not_exist(struct count_elem c);
 
-/* 3) Suskaiciuoti keik zodziu, eiluciu ir simboliu yra tekstiniame faile. Turet omenyje kad failas gali buti labai didelis. Tai reiskia viskas turi buti atliekama naudojant buferi.
- 
- c) issaugotimmatskirame faile
- 
- d) Duomenu failo adresa yra ivedamas vartotojo, ir jei reikalingas rezultatu failo adresas; yra ivedamas vartotojo
- 
- 
- a) gautus rezultatus irashyti failo pradzioja
- b) gautus rezultatus irashyti failo pabaigoje
- 
- */
 #endif
